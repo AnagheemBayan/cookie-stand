@@ -1,6 +1,6 @@
 'use strict';
 
-let hour = ['6am', '7am','8am', '9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','Total']
+let hour = ['6am', '7am','8am', '9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm']
 
 
 let seattle = {
@@ -9,6 +9,8 @@ let seattle = {
     maxCusPerHour :65 ,
     avgCookPerCus :6.3,
     cookPerHour:[],
+
+    
     render:function (){
         let parent=document.getElementById('mainpage')
         let ulEl = document.createElement('ul');
@@ -16,34 +18,33 @@ let seattle = {
         shopName.textContent=this.Location;
         parent.appendChild(shopName);
         parent.appendChild(ulEl);
-        let liEl; 
+        let liEl;
+        let total = 0; 
         for(let i = 0 ; i <hour.length; i++)
-        {
+        { 
+
+            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
+            total =  total+this.cookPerHour[i] 
+        
             liEl = document.createElement('li');
             ulEl.appendChild(liEl);
+           
             liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-        }
-    },
-
-    randCusPerHour:function(min,max)
-    {
+            
+           
+            }
+            liEl.textContent= 'total : ' + total;
     
-        let sum = 0;
-        return Math.floor(Math.random() * (max - min + 1) + min); 
+            },
 
-    },
-    calCookPerHour:function(){
-      for(let i=0;i<hour.length;i++)
-      {
-          this.cookPerHour.push(Math.floor(this.randCusPerHour(this.minCusPerHour,this.maxCusPerHour)*this.avgCookPerCus));
-      }
-     
-    }
 
-};
-seattle.calCookPerHour();
+}
+   
+
 seattle.render();
-console.log(seattle.cookPerHour);
+
+
+  
 
 let tokyo = {
     Location:'Tokyo',
@@ -59,29 +60,26 @@ let tokyo = {
         parent.appendChild(shopName);
         parent.appendChild(ulEl);
         let liEl; 
+        let total=0;
         for(let i = 0 ; i <hour.length; i++)
         {
+            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
+            total =  total+this.cookPerHour[i] 
+        
             liEl = document.createElement('li');
             ulEl.appendChild(liEl);
+           
             liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-        }
-    },
-    randCusPerHour:function(min,max)
-    {
-        return Math.floor(Math.random() * (max - min + 1) + min); 
+            
+           
+            }
+            liEl.textContent= 'total : ' + total;}
 
-    },
-    calCookPerHour:function(){
-      for(let i=0;i<hour.length;i++)
-      {
-          this.cookPerHour.push(Math.floor(this.randCusPerHour(this.minCusPerHour,this.maxCusPerHour)*this.avgCookPerCus));
-      }
-    }
-
+           
 };
-tokyo.calCookPerHour();
+
 tokyo.render();
-console.log(tokyo.cookPerHour);
+
 
    
 
@@ -102,29 +100,28 @@ let dubai = {
         parent.appendChild(shopName);
         parent.appendChild(ulEl);
         let liEl; 
+        let total=0;
         for(let i = 0 ; i <hour.length; i++)
         {
+            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
+            total =  total+this.cookPerHour[i] 
+        
             liEl = document.createElement('li');
             ulEl.appendChild(liEl);
+           
             liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-        }
-    },
-    randCusPerHour:function(min,max)
-    {
-        return Math.floor(Math.random() * (max - min + 1) + min); 
+            
+           
+            }
+            liEl.textContent= 'total : ' + total;}
 
-    },
-    calCookPerHour:function(){
-      for(let i=0;i<hour.length;i++)
-      {
-          this.cookPerHour.push(Math.floor(this.randCusPerHour(this.minCusPerHour,this.maxCusPerHour)*this.avgCookPerCus));
-      }
-    }
-
+           
 };
-dubai.calCookPerHour();
+
+
+
 dubai.render();
-console.log(dubai.cookPerHour);
+
 
 
 
@@ -143,28 +140,26 @@ let paris = {
         parent.appendChild(shopName);
         parent.appendChild(ulEl);
         let liEl; 
+        let total=0;
         for(let i = 0 ; i <hour.length; i++)
         {
+            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
+            total =  total+this.cookPerHour[i] 
+        
             liEl = document.createElement('li');
             ulEl.appendChild(liEl);
+           
             liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-        }
-    },
-    randCusPerHour:function(min,max)
-    {
-        return Math.floor(Math.random() * (max - min + 1) + min); 
+            
+           
+            }
+            liEl.textContent= 'total : ' + total;}
 
-    },
-    calCookPerHour:function(){
-      for(let i=0;i<hour.length;i++)
-      {
-          this.cookPerHour.push(Math.floor(this.randCusPerHour(this.minCusPerHour,this.maxCusPerHour)*this.avgCookPerCus));
-      }
-    }
+           
 };
-paris.calCookPerHour();
+
 paris.render();
-console.log(paris.cookPerHour);
+
 
 
 
@@ -184,28 +179,26 @@ let lima = {
         parent.appendChild(shopName);
         parent.appendChild(ulEl);
         let liEl; 
+        let total=0;
         for(let i = 0 ; i <hour.length; i++)
         {
+            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
+            total =  total+this.cookPerHour[i] 
+        
             liEl = document.createElement('li');
             ulEl.appendChild(liEl);
+           
             liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-        }
-    },
-    randCusPerHour:function(min,max)
-    {
-        return Math.floor(Math.random() * (max - min + 1) + min); 
+            
+           
+            }
+            liEl.textContent= 'total : ' + total;}
 
-    },
-    calCookPerHour:function(){
-      for(let i=0;i<hour.length;i++)
-      {
-          this.cookPerHour.push(Math.floor(this.randCusPerHour(this.minCusPerHour,this.maxCusPerHour)*this.avgCookPerCus));
-      }
-    }
+           
 };
-lima.calCookPerHour();
+
 lima.render();
-console.log(lima.cookPerHour);
+  
 
 
 
