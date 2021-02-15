@@ -192,7 +192,7 @@ let lima = {
             
            
             }
-            liEl.textContent= 'total : ' + total;}
+            liEl.textContent= 'total : ' + total ;}
 
            
 };
