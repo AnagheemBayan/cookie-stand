@@ -1,208 +1,130 @@
 'use strict';
 
 let hour = ['6am', '7am','8am', '9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm']
+let parent=document.getElementById('mainpage')
+let table = document.createElement('table');
+parent.appendChild(table);
 
 
-let seattle = {
-    Location:'Seattle',
-    minCusPerHour:23 ,
-    maxCusPerHour :65 ,
-    avgCookPerCus :6.3,
-    cookPerHour:[],
+function CokLocation (location, minCusPerHour ,maxCusPerHour, avgCookPerCus) {
+    this.Location = location;
+    this.minCusPerHour = minCusPerHour;
+    this.maxCusPerHour =maxCusPerHour;
+    this.avgCookPerCus=  avgCookPerCus;
+    this.cookPerHour=[];
+    this.total=0;
+}
+ 
 
     
-    render:function (){
-        let parent=document.getElementById('mainpage')
-        let ulEl = document.createElement('ul');
-        let shopName = document.createElement('h1');
-        shopName.textContent=this.Location;
-        parent.appendChild(shopName);
-        parent.appendChild(ulEl);
-        let liEl;
-        let total = 0; 
+    CokLocation.prototype.render=function (){
+        
+    
+            
+            let tr = document.createElement('tr')
+            table.appendChild(tr);
+        let td = document.createElement('td') ; 
+        td.textContent = this.Location
+        tr.appendChild(td);
+         
+
         for(let i = 0 ; i <hour.length; i++)
         { 
 
             this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
-            total =  total+this.cookPerHour[i] 
-        
-            liEl = document.createElement('li');
-            ulEl.appendChild(liEl);
-           
-            liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-            
-           
-            }
-            liEl.textContent= 'total : ' + total;
+           this.total =  this.total+this.cookPerHour[i] ;
+
+            let td = document.createElement('td') ; 
+            td.textContent = this.cookPerHour[i]
+            tr.appendChild(td);
+
+        }     
+        let td1 = document.createElement('td') ; 
+        td1.textContent =this.total;
+        tr.appendChild(td1);
+    }
+
+
+
+   
+header();
+
+
+let seattle = new CokLocation('Seattle', '23','65','6.3')
+seattle.render();
+
+let tokyo = new CokLocation('Tokyo','3','24','1.2')
+tokyo.render();
+
+let dubai = new CokLocation('Dubai','11','38','3.7')
+dubai.render();
+
+let paris=new CokLocation('Paris','20','38','2.3')
+paris.render();
+
+let lima = new CokLocation('Lima','2','16','4.6')
+lima.render();
+
+
+function header(){
+    let tr = document.createElement('tr')
+    table.appendChild(tr);
+    let th2 = document.createElement('th')
+    tr.appendChild(th2);
+    th2.textContent = ' ';
+    for(let i =0 ;i<hour.length;i++){
     
-            },
+    let th =document.createElement('th')
+    tr.appendChild(th);
+    
+    th.textContent=hour[i];
+   
+    }
+    let th1 =document.createElement('th')
+    tr.appendChild(th1);
+    th1.textContent='Daily Location Total';
+}
+
+function footer (){
+    let tr = document.createElement('tr')
+    table.appendChild(tr);
+    let th = document.createElement('th')
+    tr.appendChild(th)
+
+    th.textContent='Totals ';
+for(let i =0 ; i<seattle.cookPerHour.length;i++) {
+    let th = document.createElement('th')
+    tr.appendChild(th)
+
+th.textContent= seattle.cookPerHour[i]+tokyo.cookPerHour[i]+dubai.cookPerHour[i]+paris.cookPerHour[i]+lima.cookPerHour[i];
+
+}
+let th3 = document.createElement('th')
+tr.appendChild(th3)
+th3.textContent= seattle.total+tokyo.total+dubai.total+paris.total+lima.total;
 
 
 }
-   
-
-seattle.render();
-
+footer();
 
   
 
-let tokyo = {
-    Location:'Tokyo',
-    minCusPerHour:3 ,
-    maxCusPerHour :24 ,
-    avgCookPerCus :1.2,
-    cookPerHour:[],
-    render:function (){
-        let parent=document.getElementById('mainpage')
-        let ulEl = document.createElement('ul');
-        let shopName = document.createElement('h1');
-        shopName.textContent=this.Location;
-        parent.appendChild(shopName);
-        parent.appendChild(ulEl);
-        let liEl; 
-        let total=0;
-        for(let i = 0 ; i <hour.length; i++)
-        {
-            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
-            total =  total+this.cookPerHour[i] 
-        
-            liEl = document.createElement('li');
-            ulEl.appendChild(liEl);
-           
-            liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-            
-           
-            }
-            liEl.textContent= 'total : ' + total;}
 
-           
-};
 
-tokyo.render();
 
 
    
 
+
+
+
+
+
+
+
+        
     
 
 
-let dubai = {
-    Location:'Dubai',
-    minCusPerHour:11 ,
-    maxCusPerHour:38 ,
-    avgCookPerCus:3.7,
-    cookPerHour:[],
-    render:function (){
-        let parent=document.getElementById('mainpage')
-        let ulEl = document.createElement('ul');
-        let shopName = document.createElement('h1');
-        shopName.textContent=this.Location;
-        parent.appendChild(shopName);
-        parent.appendChild(ulEl);
-        let liEl; 
-        let total=0;
-        for(let i = 0 ; i <hour.length; i++)
-        {
-            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
-            total =  total+this.cookPerHour[i] 
-        
-            liEl = document.createElement('li');
-            ulEl.appendChild(liEl);
-           
-            liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-            
-           
-            }
-            liEl.textContent= 'total : ' + total;}
-
-           
-};
-
-
-
-dubai.render();
-
-
-
-
-
-let paris = {
-    Location:'Paris',
-    minCusPerHour:20,
-    maxCusPerHour :38 ,
-    avgCookPerCus :2.3,
-    cookPerHour:[],
-    render:function (){
-        let parent=document.getElementById('mainpage')
-        let ulEl = document.createElement('ul');
-        let shopName = document.createElement('h1');
-        shopName.textContent=this.Location;
-        parent.appendChild(shopName);
-        parent.appendChild(ulEl);
-        let liEl; 
-        let total=0;
-        for(let i = 0 ; i <hour.length; i++)
-        {
-            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
-            total =  total+this.cookPerHour[i] 
-        
-            liEl = document.createElement('li');
-            ulEl.appendChild(liEl);
-           
-            liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-            
-           
-            }
-            liEl.textContent= 'total : ' + total;}
-
-           
-};
-
-paris.render();
-
-
-
-
-
-
-let lima = {
-    Location:'Lima',
-    minCusPerHour:2,
-    maxCusPerHour:16,
-    avgCookPerCus:4.6,
-    cookPerHour:[],
-    render:function (){
-        let parent=document.getElementById('mainpage')
-        let ulEl = document.createElement('ul');
-        let shopName = document.createElement('h1');
-        shopName.textContent=this.Location;
-        parent.appendChild(shopName);
-        parent.appendChild(ulEl);
-        let liEl; 
-        let total=0;
-        for(let i = 0 ; i <hour.length; i++)
-        {
-            this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
-            total =  total+this.cookPerHour[i] 
-        
-            liEl = document.createElement('li');
-            ulEl.appendChild(liEl);
-           
-            liEl.textContent = hour[i]+' : ' + this.cookPerHour[i];
-            
-           
-            }
-            liEl.textContent= 'total : ' + total ;}
-
-           
-};
-
-lima.render();
   
-
-
-
-
-
-
 
