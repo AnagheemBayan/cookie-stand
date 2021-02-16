@@ -50,19 +50,19 @@ function CokLocation (location, minCusPerHour ,maxCusPerHour, avgCookPerCus) {
 header();
 
 
-let seattle = new CokLocation('Seattle', '23','65','6.3')
+let seattle = new CokLocation('Seattle', 23,65,6.3)
 seattle.render();
 
-let tokyo = new CokLocation('Tokyo','3','24','1.2')
+let tokyo = new CokLocation('Tokyo',3,24,1.2)
 tokyo.render();
 
-let dubai = new CokLocation('Dubai','11','38','3.7')
+let dubai = new CokLocation('Dubai',11,38,3.7)
 dubai.render();
 
-let paris=new CokLocation('Paris','20','38','2.3')
+let paris=new CokLocation('Paris',20,38,2.3)
 paris.render();
 
-let lima = new CokLocation('Lima','2','16','4.6')
+let lima = new CokLocation('Lima',2,16,4.6)
 lima.render();
 
 
