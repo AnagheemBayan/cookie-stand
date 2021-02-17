@@ -1,6 +1,7 @@
 'use strict';
 
 let hour = ['6am', '7am','8am', '9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm']
+let totalArr=[0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 let parent=document.getElementById('mainpage')
 let table = document.createElement('table');
 parent.appendChild(table);
@@ -34,6 +35,8 @@ function CokLocation (location, minCusPerHour ,maxCusPerHour, avgCookPerCus) {
 
             this.cookPerHour.push(Math.floor((Math.random() * (1+this.maxCusPerHour-this.minCusPerHour) +this.minCusPerHour)*this.avgCookPerCus));
            this.total =  this.total+this.cookPerHour[i] ;
+           totalArr[i] += this.cookPerHour[i];
+
 
             let td = document.createElement('td') ; 
             td.textContent = this.cookPerHour[i]
@@ -87,6 +90,7 @@ function header(){
 }
 
 function footer (){
+    let totGlobal= 0;
     let tr = document.createElement('tr')
     table.appendChild(tr);
     let th1 = document.createElement('th')
@@ -97,13 +101,17 @@ function footer (){
 for(let i =0 ; i<seattle.cookPerHour.length;i++) {
      th = document.createElement('th')
     tr.appendChild(th)
-
-th.textContent= seattle.cookPerHour[i]+tokyo.cookPerHour[i]+dubai.cookPerHour[i]+paris.cookPerHour[i]+lima.cookPerHour[i];
+    
+th.textContent= totalArr[i];
+totGlobal+=totalArr[i];
 
 }
+
+
 let th3 = document.createElement('th')
 tr.appendChild(th3)
-th3.textContent= seattle.total+tokyo.total+dubai.total+paris.total+lima.total;
+th3.textContent= totGlobal;
+
 
 
 }
