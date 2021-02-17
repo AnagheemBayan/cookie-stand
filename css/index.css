@@ -1,0 +1,71 @@
+
+body{
+    background-color: burlywood;
+}
+header {
+    background-color:#ffebcd;
+    height: 100px;
+   
+    
+  }
+  nav {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  
+
+ header nav ul li {
+     position: relative;
+    display: inline-block;
+    text-decoration:none;
+    bottom: 150px;
+    left: 200px;
+    margin: 30px;
+    
+
+
+}
+header nav ul {
+    position: relative;
+    width: 960px;
+  
+}
+li{
+  
+   font-size: large;
+   
+   font-family: monospace;
+
+}
+
+a {
+    text-decoration: none;
+}
+li :hover{
+    color: lightslategray;
+
+}
+main{
+    width: 960px;
+    margin:0 auto;
+}
+
+.firstImg {
+    position: relative;
+    right: 400px;
+    bottom: 200px;
+    top: 30px;
+    
+}
+
+ footer{
+    
+
+    clear: left;
+    height: 200px;
+    background-color:#ffebcd 
+
+}
+
+ 

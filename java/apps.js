@@ -88,12 +88,13 @@ function header(){
 function footer (){
     let tr = document.createElement('tr')
     table.appendChild(tr);
-    let th = document.createElement('th')
-    tr.appendChild(th)
+    let th1 = document.createElement('th')
+    tr.appendChild(th1)
 
-    th.textContent='Totals ';
+    th1.textContent='Totals ';
+    let th
 for(let i =0 ; i<seattle.cookPerHour.length;i++) {
-    let th = document.createElement('th')
+     th = document.createElement('th')
     tr.appendChild(th)
 
 th.textContent= seattle.cookPerHour[i]+tokyo.cookPerHour[i]+dubai.cookPerHour[i]+paris.cookPerHour[i]+lima.cookPerHour[i];
@@ -106,6 +107,15 @@ th3.textContent= seattle.total+tokyo.total+dubai.total+paris.total+lima.total;
 
 }
 footer();
+
+
+
+
+
+
+
+
+
 
   
 
