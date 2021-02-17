@@ -5,6 +5,7 @@ let parent=document.getElementById('mainpage')
 let table = document.createElement('table');
 parent.appendChild(table);
 
+let countRow=1;
 
 function CokLocation (location, minCusPerHour ,maxCusPerHour, avgCookPerCus) {
     this.Location = location;
@@ -18,7 +19,7 @@ function CokLocation (location, minCusPerHour ,maxCusPerHour, avgCookPerCus) {
 
     
     CokLocation.prototype.render=function (){
-        
+        countRow++;
     
             
             let tr = document.createElement('tr')
@@ -109,6 +110,30 @@ th3.textContent= seattle.total+tokyo.total+dubai.total+paris.total+lima.total;
 footer();
 
 
+const form = document.getElementById('addLocation')
+ form .addEventListener('submit', addNewlocation)
+
+ function addNewlocation(event){
+    event.preventDefault();
+console.log(event);
+    let  location= event.target.Lname.value ;
+
+    let min = event.target.min.value;
+
+    let max = event.target.max.value;
+
+    let avg= event.target.avg.value;
+
+    let newLocation = new CokLocation (location , min ,max ,avg);
+
+    table.deleteRow(countRow);
+    newLocation.render();
+    footer();
+
+
+ }
+ 
+ 
 
 
 
