@@ -36,6 +36,7 @@ li{
    font-size: large;
    
    font-family: monospace;
+   
 
 }
 
@@ -66,6 +67,11 @@ main{
     height: 200px;
     background-color:#ffebcd 
 
+}
+body{
+    background-image: url("http://ginaleegossett.github.io/cookie-stand/img/fishcookies2.png");
+    
+    
 }
 
  
