@@ -1,7 +1,43 @@
 table, th ,td{
+  position: relative;
+  top: 50px;
+  left: 100px;
+  width: 1111px;
   border: 1px;
   border: solid ; 
 border-color: black;
-border-collapse: collapse;
+border-collapse:collapse;
 
+}
+
+
+header h1{
+  position: relative;
+  left: 450px;
+  top: 30px;
+  font-size: xx-large;
+  font-family: cursive;
+}
+
+
+
+main img {
+
+position: relative;
+left: 200px;
+top: 105px;
+width: 1111px;
+}
+body{
+  background-color: lightblue;
+}
+
+.index ul li {
+  text-decoration:overline;
+  font-family: cursive;
+  font-size: larger;
+  
+}
+.index :hover{
+  color:brown;
 }
