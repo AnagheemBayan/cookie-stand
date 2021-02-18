@@ -127,10 +127,13 @@ console.log(event);
     let  location= event.target.Lname.value ;
 
     let min = event.target.min.value;
+    min=parseInt(min);
 
     let max = event.target.max.value;
+    max=parseInt(max);
 
     let avg= event.target.avg.value;
+    avg=parseFloat(avg);
 
     let newLocation = new CokLocation (location , min ,max ,avg);
 
