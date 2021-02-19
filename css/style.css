@@ -1,43 +1,20 @@
-table , tr , th ,td{
- position: relative;
- top: 8px;
- width: 2000px;
-  border: 1px;
-  border: solid ; 
-border-color:black;
+table, th ,td{
+  
+  border: 6px;
+  border:inset ; 
+border-color: rgb(92, 89, 89);
 border-collapse:collapse;
-background-color:lightblue;
+margin-top: 50px;
+margin-bottom: 50px;
+margin-left: 50px;
+margin-right: 100px;
+width: 1000px;
+font-size: larger;
+font-family:serif;
 
 
-}
-body{
-  background-image: url("http://ginaleegossett.github.io/cookie-stand/img/family.jpg");
-  background-size: cover ;
-  background-repeat: no-repeat;
-  font-size: larger;
 
 
-
-}
-
-
-header h1{
-  position: relative;
-  left: 550px;
-  top: 30px;
-  font-size: xx-large;
-  font-family: cursive;
-}
-
-
-.index ul li {
-  position:relative;
-  top: 700px;
-  text-decoration:overline;
-  font-family: cursive;
-  font-size: larger;
-  font-style: italic 
-}
 .index :hover{
   color:brown;
 } 
@@ -51,9 +28,9 @@ header h1{
    color: cornsilk;
 }
 
-#addLocation{
-  margin: 20px;
 
-
-
+body{
+  background-image: url("http://ginaleegossett.github.io/cookie-stand/img/family.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
 }
