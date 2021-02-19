@@ -1,3 +1,18 @@
+
+table, th ,td{
+  
+  border: 6px;
+  border:inset ; 
+border-color: rgb(92, 89, 89);
+border-collapse:collapse;
+margin-top: 50px;
+margin-bottom: 50px;
+margin-left: 50px;
+margin-right: 100px;
+width: 1000px;
+font-size: larger;
+font-family:serif;
+
 table , tr , th ,td{
  position: relative;
  top: 8px;
@@ -18,7 +33,9 @@ body{
 
 
 
+
 }
+tr:nth-child(even){ background-color:royalblue;}
 
 
 header h1{
@@ -27,6 +44,15 @@ header h1{
   top: 30px;
   font-size: xx-large;
   font-family: cursive;
+}
+
+
+main img {
+
+position: relative;
+left: 200px;
+top: 105px;
+width: 1111px;
 }
 
 
@@ -56,4 +82,10 @@ header h1{
 
 
 
+}
+
+body{
+  background-image: url("http://ginaleegossett.github.io/cookie-stand/img/family.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
 }
